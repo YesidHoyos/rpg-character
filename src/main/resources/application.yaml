@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://rpg-character-postgres:5432/postgres
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver

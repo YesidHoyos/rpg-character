@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "37faae95-1ba8-48cb-9a81-7b5fce9ff572",
+		"name": "rpg-character",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/character/attack",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"upgradeType\": \"none\",\n    \"nickName\": \"ferho\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/character/attack",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"character",
+						"attack"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/character/ferho/style",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/character/ferho/style",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"character",
+						"ferho",
+						"style"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/character",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "1234",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"characterType\": \"warrior\",\n    \"nickName\": \"ferho\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/character",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"character"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

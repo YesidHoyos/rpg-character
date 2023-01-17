@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  rpg-character:
+    image: rpg-character-app:latest
+    container_name: rpg-character-app
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+      - wiremock
+    links:
+      - postgres
+      - wiremock
+  postgres:
+    image: postgres:latest
+    container_name: rpg-character-postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+  wiremock:
+    image: wiremock/wiremock:latest
+    container_name: rpg-character-wiremock
+    volumes:
+      - ./src/test/resources/mappings:/home/wiremock/mappings
+    ports:
+      - 9090:8080

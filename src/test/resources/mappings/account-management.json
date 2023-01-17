@@ -1,0 +1,18 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/account-management/notification/character",
+        "bodyPatterns" : [ {
+          "equalToJson" : {"nickname": "${json-unit.any-string}",
+                           "level": "${json-unit.any-number}",
+                           "characterType": "${json-unit.any-string}"}
+        } ]
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ]
+}

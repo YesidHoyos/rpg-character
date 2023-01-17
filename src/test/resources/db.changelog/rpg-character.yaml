@@ -1,0 +1,69 @@
+databaseChangeLog:
+  - changeSet:
+      id: rpg-character
+      author: yhoyos
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_character
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: uc_nickname_character
+                  name: nickname
+                  type: varchar2(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: gender
+                  type: varchar2(1)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: skin_color
+                  type: varchar2(10)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: hair_style
+                  type: varchar2(15)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: hair_color
+                  type: varchar2(10)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: attack_power
+                  type: int
+              - column:
+                  constraints:
+                    nullable: false
+                  name: defense_power
+                  type: int
+              - column:
+                  constraints:
+                    nullable: false
+                  name: level
+                  type: int
+              - column:
+                  constraints:
+                    nullable: false
+                  name: character_type
+                  type: varchar2(15)
+              - column:
+                  name: pet
+                  type: varchar2(15)
+              - column:
+                  name: mount
+                  type: varchar2(15)
+            tableName: character

@@ -1,0 +1,10 @@
+---
+applications:
+  - name: rpg-character
+    memory: 800M
+    path: ./target/rpg-character-0.0.1-SNAPSHOT.jar
+    env:
+      SPRING_PROFILES_ACTIVE: cloud
+    services:
+      - rpg-character-db
+      - rpg-character-logger
